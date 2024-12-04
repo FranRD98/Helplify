@@ -1,0 +1,227 @@
+/* Estilos generales */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Inter ,Arial, sans-serif;
+    background-color: #ffffff;
+    color: #737373;
+    line-height: 20px;
+}
+
+main {
+    display: flex;
+    height:100%;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 150px;
+    height: 100vh;
+    max-width: 15rem;
+    background-color: #f5f5f5;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+/* INFORMACIÓN DEL USUARIO */
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+/* Foto de perfil del usuario */
+.user-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.user-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8px;
+}
+
+.username {
+    font-size: 14px;
+    font-weight: 700;
+    color: #404040;
+}
+
+.rol {
+    font-size: 14px;
+    font-weight: 300;
+    color: #737373;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 38vh;
+    font-size: 14px;
+}
+
+.menu a {
+    color: #737373;
+    padding: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.menu a:hover {
+    color: #404040;
+}
+
+.menu-icon {
+    margin-right: 8px;
+    max-width: 16px;
+    max-height: 16px;
+}
+
+.seccionBotones {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.btnNewTicket {
+    padding: 10px 0px 10px 0px;
+    color: white;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.btnCerrarSesion {
+    padding: 10px 0px 10px 0px;
+    color: white;
+    background-color: #3f3f3f;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Barra superior */
+.topbar {
+    background-color: #f4f4f4;
+    color: #3f3f3f;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    margin-left: 15%;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: darkcyan;
+}
+
+/* Estilo del contenido del Dashboard */
+.content {
+    max-width: 56rem;
+    padding: 80px 100px 80px 100px;
+}
+
+/* Dashboard */
+.dashboard {
+    border-radius: 8px;
+    color: #737373;
+}
+
+/* Titulo página */
+.tituloPagina {
+    color: #505050;
+}
+
+/* Responsive para pantallas pequeñas 
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 143px;
+    }
+
+    .topbar {
+        margin-left: 200px;
+    }
+
+    .content {
+        margin-left: 200px;
+    }
+}*/
+
+/* LOGIN */
+.containerForm {
+    background-color: #f5f5f5;
+    height: 80vh;
+    width: 80vw;
+    position: absolute; /* Necesario para centrar usando top/left */
+    top: 50%; /* Mueve el elemento al 50% desde arriba */
+    left: 50%; /* Mueve el elemento al 50% desde la izquierda */
+    transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro del elemento */
+    border-radius: 8px;
+}
+
+.containerForm form {
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.containerForm form input {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 40px;
+}
+
+.containerForm form input[type='email'],
+input[type='password'] {
+    height: 30px;
+
+}
+
+.containerForm form input[type="submit"] {
+    padding: 10px 0px 10px 0px;
+    color: white;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* APP */
+
+.tituloDashboard {
+    color: #505050;
+}
+
+/* TICKETS */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
