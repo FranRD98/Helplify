@@ -1,9 +1,11 @@
 /* Estilos generales */
+* {
+    font-family: Inter, Arial, sans-serif;
+}
 body {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: Inter ,Arial, sans-serif;
     background-color: #ffffff;
     color: #737373;
     line-height: 20px;
@@ -148,58 +150,144 @@ main {
     color: #505050;
 }
 
-/* Responsive para pantallas pequeñas 
-@media screen and (max-width: 768px) {
-    .sidebar {
-        width: 143px;
-    }
-
-    .topbar {
-        margin-left: 200px;
-    }
-
-    .content {
-        margin-left: 200px;
-    }
-}*/
-
-/* LOGIN */
+/* Container Principal */
 .containerForm {
-    background-color: #f5f5f5;
-    height: 80vh;
-    width: 80vw;
-    position: absolute; /* Necesario para centrar usando top/left */
-    top: 50%; /* Mueve el elemento al 50% desde arriba */
-    left: 50%; /* Mueve el elemento al 50% desde la izquierda */
-    transform: translate(-50%, -50%); /* Ajusta el punto de referencia al centro del elemento */
-    border-radius: 8px;
+    background-color: white;
+    display: flex;
+    flex-direction: row; /* Mantiene el diseño horizontal de los hijos */
+    width: 80%;
+    height: 80%; /* Ajusta según el contenido */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Para una estética moderna */
+    border-radius: 10px; /* Opcional: para esquinas redondeadas */
+    margin: auto; /* Horizontalmente centrado */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra completamente */
 }
 
-.containerForm form {
+/* Imagen de fondo */
+.containerForm-image {
+    width: 60%;
+    background-image: url('../images/formWallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0px 0px 10px;
+}
+
+/* Formulario */
+.containerForm-form {
+    width: 40%;
+    padding: 40px 30px;
     display: flex;
     flex-direction: column;
-    margin: 50px;
+    justify-content: space-between;
+    color: #333;
 }
 
-.containerForm form input {
-    margin-top: 10px;
+.containerForm-form h1 {
+    font-size: 28px;
+    font-weight: 600;
     margin-bottom: 10px;
-    height: 40px;
+    color: #222;
 }
 
-.containerForm form input[type='email'],
-input[type='password'] {
-    height: 30px;
-
+.containerForm-form h2 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: #444;
+    font-weight: 500;
 }
 
-.containerForm form input[type="submit"] {
-    padding: 10px 0px 10px 0px;
-    color: white;
-    background-color: darkcyan;
-    border: none;
-    border-radius: 4px;
+.containerForm-form label {
     font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.containerForm-form input[type="email"],
+.containerForm-form input[type="password"] {
+    margin-top: 8px;
+    background-color: #f2f2f2;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 12px 0px 12px 0px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    width: 100%;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+.containerForm-form input[type="email"]:focus,
+.containerForm-form input[type="password"]:focus {
+    border-color: darkcyan;
+    outline: none;
+}
+
+.containerForm-form input[type="submit"] {
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.containerForm-form input[type="submit"]:hover {
+    background-color: #007f7f;
+}
+
+.register {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 25px;
+
+}
+
+/* Switch y enlaces */
+.containerForm-form div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.containerForm-form a {
+    text-decoration: none;
+    font-size: 12px;
+    color: darkcyan;
+    transition: color 0.3s ease;
+}
+
+.containerForm-form a:hover {
+    color: #005f5f;
+}
+
+/* Footer */
+.containerForm-footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+
+.containerForm-footer p {
+    margin: 5px 0;
 }
 
 /* APP */
