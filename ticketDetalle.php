@@ -24,6 +24,10 @@
 
         <?php include('Controllers/Tickets/abrirTicket.php');?>
 
+        <?php include('Controllers/Tickets/cargarComentarios.php');?>
+
+        <?php include('Controllers/Tickets/añadirComentario.php');?>
+
     </div>
 </main>
 

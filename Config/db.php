@@ -2,7 +2,7 @@
 
 $host = "localhost";
 $usuario= "root";
-$contraseña = "1234";
+$contraseña = "";
 
     try {
         $pdo = new PDO("mysql:host=$host;dbname=Helplify", $usuario, $contraseña);

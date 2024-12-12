@@ -6,9 +6,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: fff;
     color: #737373;
-    line-height: 20px;
 }
 
 main {
@@ -26,6 +24,8 @@ main {
     padding-bottom: 2.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+    position: sticky;
+    top: 0;
 }
 
 /* INFORMACIÓN DEL USUARIO */
@@ -104,6 +104,10 @@ main {
     text-decoration: none;
 }
 
+.btnNewTicket:hover {
+    color: white;
+}
+
 .btnCerrarSesion {
     padding: 10px 0px 10px 0px;
     color: white;
@@ -113,6 +117,10 @@ main {
     font-size: 14px;
     text-align: center;
     text-decoration: none;
+}
+
+.btnCerrarSesion:hover {
+    color: white;
 }
 
 /* Barra superior */
@@ -435,14 +443,108 @@ tr:nth-child(even) {
 /* DETALLES TICKET */
 .cabeceraDetallesTicket {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
 }
 
-.resumenTicket {
+.cabeceraDetallesTicket div span {
+    display: flex;
+    align-items: center;
+}
+
+.cabeceraDetallesTicket div span p {
+    margin-right: 15px;
+}
+
+.numTicket{
+    color: #505050;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.prioridadTicket {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 13px 12px 13px 12px;
+    border-radius: 8px;
+}
+
+.prioridadTicket.baja {
+    background-color: green;
+}
+
+.prioridadTicket.media {
+    background-color: orange;
+}
+
+.prioridadTicket.alta {
+    background-color: red;
+}
+
+.estadoTicket {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: capitalize;
+    padding: 13px 12px 13px 12px;
+    border-radius: 8px;
+}
+
+.estadoTicket.abierto {
+    background-color: green;
+}
+
+.estadoTicket.en_progreso {
+    background-color: orange;
+}
+
+.estadoTicket.cerrado {
+    background-color: red;
+}
+
+.ticket{
+    color: #505050;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+/* Mensajes ticket */
+.mensajeTicket {
     display: flex;
     flex-direction: row;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: solid 1px#50505024;
+    border-radius: 8px;
+    margin-bottom: 20px;
 }
-.resumenTicket p{
-    margin-left: 5px;
-    margin-right: 5px;
+
+.fotoUsuarioTicket {
+    width: auto;
+    margin-right: 25px;
+}
+
+.mensajeTicket div img{
+    width: 100px;
+    height: auto;
+    border-radius: 100%;
+}
+
+.usuarioTicket {
+    color: #505050;
+    font-weight: bold;
+}
+
+.btnEnviarRespuesta {
+    padding: 10px 10px 10px 10px;
+    color: white;
+    background-color: darkcyan;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: center;
+    text-decoration: none;
 }

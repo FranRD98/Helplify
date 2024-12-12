@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['password'] = $password;
 
             // Usuario validado, redigir a 'Dashboard'
-             header("Location: ../dashboard.php");
+             header("Location: ../gestionarTickets.php");
              exit();
         }
     } catch (Exception $e) {
