@@ -20,7 +20,7 @@
 
     <!-- Contenido del Dashboard -->
     <div class="content">
-        <h1 style="color: #505050">Usuarios</h1>
+        <h1 class="tituloDashboard">Usuarios</h1>
         <p>Welcome to the Helpify Dashboard. Here you can manage tickets, categories, users, and more.</p>
 
     </div>

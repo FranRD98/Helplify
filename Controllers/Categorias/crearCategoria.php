@@ -1,8 +1,8 @@
 <?php 
-require_once('../Config/db.php');
+require_once('../../Config/db.php');
 
 // Verifica que el método de la solicitud sea POST
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Obtener el valor de la categoría del formulario
     $categoria = $_POST['categoria'];
 
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmtCategoria->execute();
 
         // Redirigir a la página de gestión de categorías después de la inserción
-        header("Location: ../gestionarCategorias.php");
+        header("Location: ../../gestionarCategorias.php");
         exit();
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();  // Muestra el mensaje de error para depuración

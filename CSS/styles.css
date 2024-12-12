@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
-    background-color: #ffffff;
+    background-color: fff;
     color: #737373;
     line-height: 20px;
 }
@@ -156,7 +156,6 @@ main {
     display: flex;
     flex-direction: row; /* Mantiene el diseño horizontal de los hijos */
     width: 80%;
-    height: 80%; /* Ajusta según el contenido */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Para una estética moderna */
     border-radius: 10px; /* Opcional: para esquinas redondeadas */
     margin: auto; /* Horizontalmente centrado */
@@ -164,6 +163,7 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); /* Centra completamente */
+    font-size: 14px;
 }
 
 /* Imagen de fondo */
@@ -178,7 +178,7 @@ main {
     border-radius: 10px 0px 0px 10px;
 }
 
-/* Formulario */
+/* Formulario iniciar sesión */
 .containerForm-form {
     width: 40%;
     padding: 40px 30px;
@@ -197,41 +197,84 @@ main {
 
 .containerForm-form h2 {
     font-size: 18px;
-    font-weight: 400;
-    margin-top: 50px;
+    font-weight: 800;
+    margin-top: 40px;
     margin-bottom: 20px;
     color: #444;
-    font-weight: 500;
 }
 
-.containerForm-form label {
+/* Formulario registro */
+.signInForm {
+    display: flex;
+    flex-direction: row; /* Mantiene el diseño horizontal de los hijos */
+    width: 60%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Para una estética moderna */
+    border-radius: 10px; /* Opcional: para esquinas redondeadas */
+    margin: auto; /* Horizontalmente centrado */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra completamente */
+    padding: 80px;
+    font-size: 14px;
+}
+
+label {
     font-size: 14px;
     font-weight: 500;
     margin-bottom: 10px;
     color: #555;
 }
 
-.containerForm-form input[type="email"],
-.containerForm-form input[type="password"] {
+input[type="text"],
+input[type="email"],
+input[type="password"] {
     margin-top: 8px;
     background-color: #f2f2f2;
     color: #555;
     border: 1px solid #ddd;
-    padding: 12px 0px 12px 0px;
+    padding: 12px 0px 12px 10px;
     border-radius: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     width: 100%;
     font-size: 14px;
     transition: border-color 0.3s ease-in-out;
 }
 
-.containerForm-form input[type="email"]:focus,
-.containerForm-form input[type="password"]:focus {
+form textarea {
+    margin-top: 8px;
+    background-color: #f2f2f2;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 12px 0px 12px 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+form select {
+    margin-top: 8px;
+    background-color: #f2f2f2;
+    color: #555;
+    border: 1px solid #ddd;
+    padding: 12px 0px 12px 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input[type="text"]:focus
+input[type="email"]:focus,
+input[type="password"]:focus {
     border-color: darkcyan;
     outline: none;
 }
 
-.containerForm-form input[type="submit"] {
+input[type="submit"] {
     background-color: darkcyan;
     color: white;
     border: none;
@@ -246,35 +289,34 @@ main {
     margin-bottom: 25px;
 }
 
-.containerForm-form input[type="submit"]:hover {
+input[type="submit"]:hover {
     background-color: #007f7f;
 }
 
 .register {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     flex-direction: row;
     justify-content: space-evenly;
     margin-top: 25px;
-
+    font-size: 14px;
 }
 
 /* Switch y enlaces */
 .containerForm-form div {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin-top: 15px;
 }
 
-.containerForm-form a {
+a {
     text-decoration: none;
-    font-size: 12px;
     color: darkcyan;
     transition: color 0.3s ease;
 }
 
-.containerForm-form a:hover {
+a:hover {
     color: #005f5f;
 }
 
@@ -282,7 +324,6 @@ main {
 .containerForm-footer {
     margin-top: 20px;
     text-align: center;
-    font-size: 12px;
     color: #999;
 }
 
@@ -291,9 +332,15 @@ main {
 }
 
 /* APP */
-
 .tituloDashboard {
     color: #505050;
+    font-size: 40px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+.tituloDashboard svg {
+    margin-left: 10px;
 }
 
 /* TICKETS */
@@ -312,4 +359,75 @@ th {
 }
 tr:nth-child(even) {
     background-color: #f9f9f9;
+}
+
+/* CATEGORIAS */
+.newCategoryForm {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /* Mantiene el diseño horizontal de los hijos */
+    width: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Para una estética moderna */
+    border-radius: 10px; /* Opcional: para esquinas redondeadas */
+    margin: auto; /* Horizontalmente centrado */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra completamente */
+    font-size: 14px;
+    padding: 50px 0px 50px 0px;
+}
+
+/* VENTANA POPUP */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h2 {
+    color: #505050;
+}
+
+.modal-content button {
+        background-color: darkcyan;
+        color: white;
+        border: none;
+        padding: 15px;
+        font-size: 16px;
+        font-weight: 500;
+        border-radius: 8px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+        width: 100%;
+}
+
+.modal-content button:hover {
+    background-color: #007f7f;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
 }

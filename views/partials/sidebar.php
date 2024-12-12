@@ -31,7 +31,7 @@
             </a>
         </div>
         <div class="seccionBotones">
-            <a href='nuevoTicket.php' class="btnNewTicket">Nuevo Ticket</a>
+            <a href='#' onclick="crearTicket()" class="btnNewTicket">Nuevo Ticket</a>
             <a href='signOut.php' class="btnCerrarSesion">Cerrar Sesión</a>
         </div>
 

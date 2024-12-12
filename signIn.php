@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="CSS/styles.css">
 </head>
 <body>
-    <div class="containerForm">
+    <div class="signInForm">
         
         <form action="Controllers/signInController.php" method="POST">
             <h1>HELPLIFY</h1>
