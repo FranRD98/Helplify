@@ -2,7 +2,7 @@
 require_once('../Models/Usuario.php');
 require_once('../Config/db.php');
 
-session_start(); // Iniciar la sesión
+//session_start(); // Iniciar la sesión
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Obtener valores del formulario

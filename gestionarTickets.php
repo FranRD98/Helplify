@@ -95,6 +95,22 @@ $categorias = $stmtCategorias->fetchAll(PDO::FETCH_ASSOC);
         </form>
     </div>
 </div>
+
+<!-- Modal de edición -->
+<div id="editarTicketPopup" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="cerrarEditarTicket()">&times;</span>
+        <h2>Editar Ticket</h2>
+        <form id="editForm" action="Controllers/Tickets/editarTicket.php" method="POST">
+            <input type="hidden" id="ticketId" name="ticketId">
+            <label for="ticketNuevoNombre">Nuevo nombre:</label>
+            <input type="text" id="ticketNuevoNombre" name="ticketNuevoNombre" required>
+            <button type="submit">Guardar cambios</button>
+        </form>
+    </div>
+</div>
+
+
 <script src='js/functions.js'></script>
 </body>
 </html>

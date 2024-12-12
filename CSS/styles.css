@@ -135,8 +135,8 @@ main {
 
 /* Estilo del contenido del Dashboard */
 .content {
-    max-width: 56rem;
     padding: 80px 100px 80px 100px;
+    width: 90%;
 }
 
 /* Dashboard */
@@ -430,4 +430,19 @@ tr:nth-child(even) {
     right: 10px;
     font-size: 24px;
     cursor: pointer;
+}
+
+/* DETALLES TICKET */
+.cabeceraDetallesTicket {
+    display: flex;
+    justify-content: space-between;
+}
+
+.resumenTicket {
+    display: flex;
+    flex-direction: row;
+}
+.resumenTicket p{
+    margin-left: 5px;
+    margin-right: 5px;
 }

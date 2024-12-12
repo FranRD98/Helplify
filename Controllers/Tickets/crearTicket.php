@@ -30,11 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $queryTicket->execute();
 
         // Redirigir a la página de gestión de categorías después de la inserción
-        header("Location: ../../gestionarCategorias.php");
+        header("Location: ../../gestionarTickets.php");
         exit();
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();  // Muestra el mensaje de error para depuración
-        header("Location: ../../gestionarCategorias.php");
+        header("Location: ../../gestionarTickets.php");
         exit();
     }
 }
