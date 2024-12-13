@@ -9,11 +9,15 @@
     }
 
     // Función para abrir el modal y rellenar los campos para modificar el nombre del ticket
-    function editarTicket(id, nombre) {
+    function editarTicket(id, nombre, descripcion, prioridad, usuario, categoria) {
         document.getElementById('ticketId').value = id;
         document.getElementById('ticketNuevoNombre').value = nombre;
+        document.getElementById('ticketNuevaDescripcion').value = descripcion;
+        document.getElementById('ticketNuevaPrioridad').value = prioridad;
+        document.getElementById('ticketNuevoUsuario').value = usuario;
+        document.getElementById('ticketNuevaCategoria').value = categoria;
         document.getElementById('editarTicketPopup').style.display = 'block';
-    }
+    }    
 
     // Función para cerrar el modal
     function cerrarEditarTicket() {
@@ -48,6 +52,12 @@
         }
         if (event.target === document.getElementById('nuevaCategoriaPopup')) {
             cerrarCrearCategoria();
+        }
+        if (event.target === document.getElementById('editarTicketPopup')) {
+            cerrarEditarTicket();
+        }
+        if (event.target === document.getElementById('nuevoTicketPopup')) {
+            cerrarCrearTicket();
         }
     }
 

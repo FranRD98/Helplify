@@ -1,3 +1,8 @@
+<?php
+    // Iniciar la sesión
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -20,6 +25,18 @@
 
             <form action="Controllers/loginController.php" method="POST">
                 <h1>HELPLIFY</h1>
+
+                <!-- Mostrar mensaje si se ha hecho logout -->
+                <?php   
+
+                    if (isset($_SESSION['messageError'])): ?>
+                    <div class="messageError">
+                        <?php echo $_SESSION['messageError']; ?>
+                    </div>
+
+                    <?php unset($_SESSION['message']); // Eliminar el mensaje después de mostrarlo ?>
+                <?php endif; ?>
+                
                 <h2>Bienvenido de nuevo</h2>
 
                 <label for='email'>Login</label>
@@ -48,6 +65,7 @@
                 <p>Fran Riera</p>
                 <p>Helplify 2024</p>
             </div>
+
         </div>
     </div>
 

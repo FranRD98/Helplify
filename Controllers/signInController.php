@@ -15,8 +15,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Verificar si las contraseñas coinciden
     if ($password !== $passwordConfirm) {
-        $_SESSION['error'] = 'Las contraseñas no coinciden.';
-        header("Location: ../views/signin.php");
+        $_SESSION['messageError'] = 'Las contraseñas no coinciden.';
+        header("Location: ../signin.php");
+        exit();
+    }
+
+    // Verificar si el email ya está registrado
+    try {
+
+        // Consultar si el email ya existe
+        $sql = "SELECT * FROM usuarios WHERE email = :email";
+        $stmt = $pdo->prepare($sql);
+        $stmt->bindParam(':email', $email, PDO::PARAM_STR);
+        $stmt->execute();
+
+        // Si el email ya existe, mostrar un error
+        if ($stmt->rowCount() > 0) {
+            $_SESSION['messageError'] = 'Este correo electrónico ya está registrado.';
+            header("Location: ../signin.php");
+            exit();
+        }
+
+    } catch (Exception $e) {
+        $_SESSION['messageError'] = 'Error al verificar el correo electrónico: ' . $e->getMessage();
+        header("Location: ../signin.php");
         exit();
     }
 
@@ -27,8 +49,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Verificar el tipo de archivo
         $archivoTipo = $_FILES['foto_perfil']['type'];
         if (strpos($archivoTipo, 'image') === false) {
-            $_SESSION['error'] = 'Por favor, sube una imagen válida.';
-            header("Location: ../views/signin.php");
+            $_SESSION['messageError'] = 'Por favor, sube una imagen válida.';
+            header("Location: ../signin.php");
             exit(); // Asegurarse de detener la ejecución si hay un error
         }
 
@@ -36,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $fotoPerfil = file_get_contents($_FILES['foto_perfil']['tmp_name']);
     } else {
         // Si no se sube una imagen, asignar la imagen por defecto
-        $fotoPerfil = file_get_contents('path/a/tu/imagen/por/defecto.jpg'); // Ruta a la imagen por defecto
+        $fotoPerfil = file_get_contents('/images/user_default.png'); // Ruta a la imagen por defecto
     }
 
     try {
@@ -50,18 +72,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../index.php");
             exit();
         } else {
-            echo "Hubo un error al registrar el usuario.";
-            //$_SESSION['error'] = 'Hubo un error al registrar el usuario.';
-            //header("Location: ../views/signin.php");
-            //exit();
+            $_SESSION['messageError'] = 'Hubo un error al registrar el usuario.';
+            header("Location: ../signin.php");
+            exit();
         }
     } catch (Exception $e) {
         // Si hubo un error durante la ejecución, manejarlo
-        echo 'Error al registrar el usuario: ' . $e->getMessage();
-
-        //$_SESSION['error'] = 'Error al registrar el usuario: ' . $e->getMessage();
-        //header("Location: ../views/signin.php");
-        //exit(); // Detener la ejecución en caso de error
+        $_SESSION['messageError'] = 'Error al registrar el usuario: ' . $e->getMessage();
+        header("Location: ../signin.php");
+        exit(); // Detener la ejecución en caso de error
     }
 }
 ?>

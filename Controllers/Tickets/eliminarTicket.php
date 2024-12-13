@@ -8,16 +8,21 @@ if ($_SERVER["REQUEST_METHOD"] === "GET") {
 
     try {
         // Definir la consulta para ELIMINAR la categoría
-        $queryTickets = "delete FROM tickets WHERE id = :id"; // Uso de parámetros preparados para evitar inyección SQL
+        $queryTicket = "delete FROM tickets WHERE id = :id"; // Uso de parámetros preparados para evitar inyección SQL
+        $queryRespuestas = "delete FROM respuestas WHERE idTicket = :id"; // Elimina las respuestas del ticket
 
         // Preparar la consulta
-        $queryTickets = $pdo->prepare($queryTickets);
+        $queryTicket = $pdo->prepare($queryTicket);
+        $queryRespuestas = $pdo->prepare($queryRespuestas);
+
 
         // Vincular el valor de la categoría
-        $queryTickets->bindParam(':id', $id, PDO::PARAM_STR);
+        $queryTicket->bindParam(':id', $id, PDO::PARAM_STR);
+        $queryRespuestas->bindParam(':id', $id, PDO::PARAM_STR);
 
         // Ejecutar la consulta
-        $queryTickets->execute();
+        $queryTicket->execute();
+        $queryRespuestas->execute();
 
         // Redirigir a la página de gestión de categorías después de la inserción
         header("Location: ../../gestionarTickets.php");

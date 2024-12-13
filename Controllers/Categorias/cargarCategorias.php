@@ -14,7 +14,6 @@ require_once('Config/db.php');
         // Iterar sobre los resultados y renderizar las filas de la tabla
         while ($row = $stmtCategoria->fetch(PDO::FETCH_ASSOC)) {
             echo "<tr>";
-            echo "<td>" . htmlspecialchars($row['id']) . "</td>";
             echo "<td>" . htmlspecialchars($row['nombre']) . "</td>";
             echo "<td>";
 

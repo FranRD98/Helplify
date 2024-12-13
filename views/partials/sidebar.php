@@ -1,11 +1,14 @@
 <!-- Barra Lateral -->
 <div class="sidebar">
         <div class="user-info">
-            <div>
-                <?php echo '<img src="' . $_SESSION['fotoPerfil'] . '" alt="User Picture" class="user-image">'?> 
-                <?php echo '<img src="data:image/jpeg;base64,'?> . <?php echo base64_encode($fotoPerfil); ?> . '" alt="User Picture" class="user-image">'
+        <?php
+            // Verificar si 'fotoPerfil' existe en la sesión y no es null
+            if (isset($_SESSION['fotoPerfil']) && $_SESSION['fotoPerfil'] !== null) {
+                // Si tiene una foto, mostrar la etiqueta <img>
+                echo '<img src="' . $_SESSION['fotoPerfil'] . '" alt="User Picture">';
+            }
+        ?>
 
-            </div>
             <div class='user-details'>
             <span class="username"><?php echo $_SESSION['nombreCompleto']; ?></span>
             <span class="rol"><?php echo $_SESSION['rolUsuario']; ?></span>
@@ -29,8 +32,7 @@
             </a>
         </div>
         <div class="seccionBotones">
-            <a href='#' onclick="crearTicket()" class="btnNewTicket">Nuevo Ticket</a>
-            <a href='signOut.php' class="btnCerrarSesion">Cerrar Sesión</a>
+            <a href='logout.php' class="btnCerrarSesion">Cerrar Sesión</a>
         </div>
 
     </div>

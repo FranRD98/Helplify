@@ -32,7 +32,6 @@
         <table>
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Categoria</th>
                 <th>Acciones</th>
             </tr>

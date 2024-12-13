@@ -36,9 +36,10 @@ main {
 
 /* Foto de perfil del usuario */
 .user-info img {
-    width: 40px;
-    height: 40px;
+    width: 40px; /* Ajusta según el tamaño deseado */
+    height: 40px; /* Asegúrate de que el ancho y alto sean iguales */
     border-radius: 50%;
+    object-fit: cover; /* Opcional: ajusta cómo la imagen encaja en el contenedor */
 }
 
 .user-details {
@@ -210,6 +211,15 @@ main {
     margin-bottom: 20px;
     color: #444;
 }
+
+/* Mensajes en el login */
+.messageError {
+    background-color: darkred;
+    color: white;
+    padding: 15px 12px 15px 12px;
+    border-radius: 5px;
+}
+
 
 /* Formulario registro */
 .signInForm {
@@ -441,6 +451,12 @@ tr:nth-child(even) {
 }
 
 /* DETALLES TICKET */
+.cabeceraTicket {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
 .cabeceraDetallesTicket {
     display: flex;
     flex-direction: column;
@@ -451,9 +467,14 @@ tr:nth-child(even) {
     align-items: center;
 }
 
+.cabeceraDetallesTicket p {
+    margin: 5px;
+}
+
 .cabeceraDetallesTicket div span p {
     margin-right: 15px;
 }
+
 
 .numTicket{
     color: #505050;
@@ -463,10 +484,10 @@ tr:nth-child(even) {
 
 .prioridadTicket {
     color: white;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 12px;
+    font-weight: 600;
     text-transform: capitalize;
-    padding: 13px 12px 13px 12px;
+    padding: 2px 8px 2px 8px;
     border-radius: 8px;
 }
 
@@ -523,14 +544,14 @@ tr:nth-child(even) {
 }
 
 .fotoUsuarioTicket {
-    width: auto;
     margin-right: 25px;
 }
 
 .mensajeTicket div img{
-    width: 100px;
-    height: auto;
-    border-radius: 100%;
+    width: 100px; /* Ajusta según el tamaño deseado */
+    height: 100px; /* Asegúrate de que el ancho y alto sean iguales */
+    border-radius: 50%;
+    object-fit: cover; /* Opcional: ajusta cómo la imagen encaja en el contenedor */
 }
 
 .usuarioTicket {

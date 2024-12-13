@@ -37,11 +37,11 @@ class Usuario {
                 echo "Usuario y contraseña válidos.<br>";
                 return true;
             } else {
-                echo "Contraseña incorrecta.<br>";
+                $_SESSION['messageError'] = 'Contraseña incorrecta';
                 throw new Exception("Contraseña incorrecta.");
             }
         } else {
-            echo "Usuario no encontrado.<br>";
+            $_SESSION['messageError'] = 'Usuario no encontrado';
             throw new Exception("Usuario no encontrado.");
         }
     }
@@ -81,7 +81,14 @@ class Usuario {
             $_SESSION['correo'] = $this->email;
             $_SESSION['nombreCompleto'] = $usuario['nombre'] . ' ' . $usuario['apellido'];
             $_SESSION['rolUsuario'] = $usuario['rol'];
-            $_SESSION['fotoPerfil'] = base64_encode($usuario['fotoPerfil']);
+            
+            // Verificamos si 'fotoPerfil' no es nulo o vacío
+            if (!empty($usuario['fotoPerfil'])) {
+                $_SESSION['fotoPerfil'] = 'data:image/jpeg;base64,' . base64_encode($usuario['fotoPerfil']);
+            } else {
+                $_SESSION['fotoPerfil'] = null; 
+            }
+
 
         } else {
             echo "Datos no encontrados.<br>";

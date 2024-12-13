@@ -51,6 +51,8 @@
 
         if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
             $fotoPerfil = $row['fotoPerfil'];
+            $_SESSION['fotoPerfil'] = 'data:image/jpeg;base64,' . base64_encode($fotoPerfil);
+            
         }
     } catch (Exception $e) {
         echo "Error al cargar la foto de perfil: " . $e->getMessage();
@@ -74,7 +76,10 @@
 
     <!-- Contenido del Dashboard -->
     <div class="content">
-        <h1 class="tituloDashboard">Foto de Perfil</h1>
+    <span class='tituloDashboard'>
+            Mi Usuario
+        </span>
+        <p>Aquí podrás modificar tu imagen de perfil</p>
 
         <!-- Formulario para subir la foto de perfil -->
         <form action="gestionarUsuario.php" method="POST" enctype="multipart/form-data">
