@@ -61,11 +61,6 @@
                 <span class='register'>¿No tienes una cuenta?<a href="signin.php">Registrarme</a></span>
             </form>
 
-            <div class='containerForm-footer'>
-                <p>Fran Riera</p>
-                <p>Helplify 2024</p>
-            </div>
-
         </div>
     </div>
 

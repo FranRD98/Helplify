@@ -15,7 +15,8 @@ require_once('Config/db.php');
         INNER JOIN Usuarios u 
             ON t.idUsuario = u.id
         LEFT JOIN Categorias c
-            ON t.idcategoria = c.id";
+            ON t.idcategoria = c.id
+            order by created_at desc";
 
         // Preparar la consulta
         $queryTickets = $pdo->prepare($queryTickets);

@@ -23,7 +23,7 @@
                         <?php echo $_SESSION['messageError']; ?>
                     </div>
 
-                    <?php unset($_SESSION['message']); // Eliminar el mensaje después de mostrarlo ?>
+                    <?php unset($_SESSION['messageError']); // Eliminar el mensaje después de mostrarlo ?>
                 <?php endif; ?>
                 
             <input type="text" name="nombre" id="nombre" placeholder="Indica tu nombre" required>

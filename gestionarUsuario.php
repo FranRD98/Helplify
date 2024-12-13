@@ -105,5 +105,6 @@
 
     </div>
 </main>
+<?php include('views/partials/footer.php');?>
 </body>
 </html>

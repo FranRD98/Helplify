@@ -1,5 +1,7 @@
 <?php 
     require_once('../../Config/db.php'); // Conexión a la base de datos
+    require_once('../enviarMail.php');
+
     session_start();
 
     // Verificar si las variables de sesión están correctamente configuradas
@@ -40,6 +42,17 @@
 
                 // Ejecutar la consulta
                 $stmtTicket->execute();
+
+                // Aquí después de la ejecución de la consulta
+                $query = "SELECT r.created_at, r.idticket, CONCAT(u.nombre, ' ', u.apellido) as usuario, u.email, r.mensaje FROM Respuestas r LEFT JOIN Usuarios U on r.usuarioId = u.id WHERE r.idTicket = :id ORDER BY r.created_at DESC LIMIT 1;";
+                $stmt = $pdo->prepare($query);
+                $stmt->bindParam(':id', $idTicket, PDO::PARAM_INT);
+                $stmt->execute();
+                $ticket = $stmt->fetch(PDO::FETCH_ASSOC);
+
+                // Llamamos a la función para enviar el correo de notificación
+                $accion = 'nuevaRespuesta'; // Acción que ha ocurrido: 'creado', 'actualizado', etc.
+                enviarCorreo($accion, $ticket);
 
             // Redirigir al detalle del ticket después de la actualización
             header("Location: ../../ticketDetalle.php?id=" . $idTicket);

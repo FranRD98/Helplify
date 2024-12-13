@@ -70,6 +70,7 @@
         </form>
     </div>
 </div>
+<?php include('views/partials/footer.php');?>
 
 <script src='js/functions.js'></script>
 </body>
