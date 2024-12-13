@@ -340,9 +340,11 @@ a:hover {
 
 /* Footer */
 .containerForm-footer {
-    margin-top: 20px;
     text-align: center;
-    color: #999;
+    color: white;
+    background-color: darkcyan;
+    font-weight: 500;
+    padding: 20px;
 }
 
 .containerForm-footer p {
